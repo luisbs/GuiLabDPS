@@ -1,0 +1,36 @@
+<div class="d-flex flex-column align-items-center">
+  <h1>{{ title }}</h1>
+  <h4>Ingrese el monto de su sueldo</h4>
+  <small class="text-muted">Nota: El calculo se realiza cuando el input pierde el focus.</small>
+
+  <div class="my-5">
+    <label class="form-label" for="salario">Salario</label>
+    <input
+      class="form-control"
+      id="salario"
+      type="number"
+      (change)="onChange($event)"
+    >
+  </div>
+
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Salario base($)</th>
+        <th scope="col">Descuento por ISSS($)</th>
+        <th scope="col">Descuento por Renta($)</th>
+        <th scope="col">Descuento por AFP($)</th>
+        <th scope="col">Salario neto($)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">{{ salario }}</th>
+        <td>{{ montoIsss }}</td>
+        <td>{{ montoRenta }}</td>
+        <td>{{ montoAfp }}</td>
+        <td>{{ salarioNeto }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
